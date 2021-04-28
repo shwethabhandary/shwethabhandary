@@ -1,0 +1,406 @@
+#boxuse {
+  border: 1px ;
+  box-shadow:0 0 10px 6px #141517;
+}
+
+#boxuseskills {
+  border: 1px ;
+  box-shadow:0 0 2px 1px #141517;
+  z-index:0;
+}
+
+.downloadbutton{
+	border-radius:30px;
+	color:#040404;
+	background:cyan;
+	font-size:18px;
+	margin-top:15px;
+	padding:5px 15px;
+	opacity:0.7;
+	font-weight:700;
+	font-family:'Poppins', sans-serif;
+	
+}
+.gitsee{
+	border-radius:30px;
+	color:white;
+	background:black;
+	font-size:18px;
+	margin-top:15px;
+	padding:10px 30px;
+	opacity:0.7;
+	
+}
+pw{
+	font-size:18px;
+	color:lightblue;
+	font-weight: 800;
+	opacity:1;
+}
+
+sup { 
+        vertical-align: super; 
+        font-size: medium; 
+    }
+
+.timeline{
+  position:relative;
+  margin:50px auto;
+  padding:40px 0;
+  width:1000px;
+  box-sizing:border-box;
+}
+.timeline:before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:-1px;
+  width:2px;
+  height:100%;
+  background:white;
+}
+.timeline ul{
+  padding:0;
+  margin:0;
+}
+.timeline ul li{
+  list-style:none;
+  position:relative;
+  width:50%;
+  padding:20px 40px;
+  box-sizing:border-box;
+}
+.timeline ul li:nth-child(odd){
+  float:left;
+  text-align:right;
+  clear:both;
+}
+.timeline ul li:nth-child(even){
+  float:right;
+  text-align:left;
+  clear:both;
+}
+.content{
+  padding-bottom:20px;
+}
+.timeline ul li:nth-child(odd):before
+{
+  content:'';
+  position:absolute;
+  width:10px;
+  height:10px;
+  top:24px;
+  right:-6px;
+  background:cyan;
+  border-radius:50%;
+  box-shadow:0 0 0 3px rgb(0,255,255,0.3);
+}
+.timeline ul li:nth-child(even):before
+{
+  content:'';
+  position:absolute;
+  width:10px;
+  height:10px;
+  top:24px;
+  left:-4px;
+  background:cyan;
+  border-radius:50%;
+  box-shadow:0 0 0 3px rgb(0,255,255,0.3);
+}
+.timeline ul li h3{
+  padding:0;
+  margin:0;
+  color:cyan;
+  font-weight:600;
+}
+.timeline ul li p{
+  margin:10px 0 0;
+  padding:0;
+}
+.timeline ul li .time h4{
+  margin:0;
+  padding:0;
+  font-size:14px;
+}
+.timeline ul li:nth-child(odd) .time
+{
+  position:absolute;
+  top:12px;
+  right:-165px;
+  margin:0;
+  padding:8px 16px;
+  background:cyan;
+  color:black;
+  border-radius:18px;
+  font-weight:700;
+  box-shadow:0 0 0 3px rgb(0,255,255,0.3);
+}
+.timeline ul li:nth-child(even) .time
+{
+  position:absolute;
+  top:12px;
+  left:-165px;
+  margin:0;
+  padding:8px 16px;
+  background:cyan;
+  color:#000;
+  border-radius:18px;
+  box-shadow:0 0 0 3px rgb(0,255,255,0.3);
+}
+@media(max-width:1000px)
+{
+  .timeline{
+    width:100%;
+  }
+}
+@media(max-width:767px){
+  .timeline{
+    width:100%;
+    padding-bottom:0;
+  }
+  h1{
+    font-size:40px;
+    text-align:center;
+  }
+  .timeline:before{
+    left:20px;
+    height:100%;
+  }
+  .timeline ul li:nth-child(odd),
+  .timeline ul li:nth-child(even)
+  {
+    width:100%;
+    text-align:left;
+    padding-left:50px;
+    padding-bottom:50px;
+  }
+  .timeline ul li:nth-child(odd):before,
+  .timeline ul li:nth-child(even):before
+  {
+    top:-18px;
+    left:16px;
+  }
+  .timeline ul li:nth-child(odd) .time,
+  .timeline ul li:nth-child(even) .time{
+    top:-30px;
+    left:50px;
+    right:inherit;
+  }
+}
+@import "compass/css3";
+
+// Mixins
+
+@mixin prefix ($property, $value,
+                 $moz:    true,
+                 $webkit: true,
+                 $o:      false,
+                 $ms:     true,
+                 $spec:   true) {
+    @if $moz    {    -moz-#{$property}: $value; }
+    @if $webkit { -webkit-#{$property}: $value; }
+    @if $o      {      -o-#{$property}: $value; }
+    @if $ms     {     -ms-#{$property}: $value; }
+    @if $spec   {         #{$property}: $value; }
+}
+
+
+// Graph stuff
+
+.bar-graph {
+		list-style: none;
+    margin: 20px 0px auto;
+}
+
+.bar-wrap {
+  @include prefix(border-radius,10px 10px 10px 10px);
+  background-color:#44484b;          
+  border: 1px solid #000;
+  margin-top:-7px;
+  margin-bottom: 8px;
+  margin-right: 8%;
+  margin-left: 8%;
+  border-radius:10px;
+  
+}
+
+.bar-graph li{
+	list-style-type:none;
+}
+
+.bar-fill { 
+  @include prefix(border-radius,10px 10px 10px 10px);
+  background-color:cyan;
+  display: block;
+  height: 9px;
+  width: 0px;
+  max-width:100%;
+  border-radius:10px;
+}
+.bartext{
+	  color:black;
+	  margin-top:-3px;
+}
+.bar-graph p {
+  color:white;
+  text-align:left;
+  margin-left:8%;
+  font-size:15px;
+  font-family:'Poppins', sans-serif;
+  text-transform: uppercase;
+}
+
+.bar-graph p1{
+	text-align:right;
+}
+
+#proghead{
+	color:white;
+  text-align:center;
+  font-weight: 700;
+  font-size:15px;
+}
+.progressc{
+    width: 95px;
+    height: 95px;
+    line-height: 40%;
+    background:none;
+    margin: 0 auto;
+    box-shadow: none;
+    position: relative;
+}
+.progressc:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 10px solid #202124;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.progressc > span{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.progressc .progressc-left{
+    left: 0;
+}
+.progressc .progressc-bar{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 10px;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+}
+.progressc .progressc-left .progressc-bar{
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+}
+.progressc .progressc-right{
+    right: 0;
+}
+.progressc .progressc-right .progressc-bar{
+    left: -101%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards;
+}
+.progressc .progressc-value{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #44484b;
+    font-size: 18px;
+    color: #fff;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    left: 5%;
+}
+.progressc.cyan .progressc-bar{
+    border-color:cyan;
+	z-index:-1;
+}
+.progressc.cyan .progressc-left .progressc-bar{
+    animation: loading-2 1.5s linear forwards 1.8s;
+}
+@keyframes loading-1{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+@keyframes loading-2{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(100deg);
+        transform: rotate(100deg);
+    }
+}
+@keyframes loading-3{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+}
+@keyframes loading-4{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(36deg);
+        transform: rotate(36deg);
+    }
+}
+@keyframes loading-5{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate(126deg);
+        transform: rotate(126deg);
+    }
+}
+@media only screen and (max-width: 990px){
+    .progressc{ margin-bottom: 20px; }
+}
+
+.skillframework span{
+  border-radius: 15px;
+  padding: 10px 13px;
+  margin: 5px 5px;
+  color: cyan;
+  display: inline-block;
+  line-height: 13px;
+  font-size: 16px;
+  background:#44484b;
+  font-weight:400;
+  font-family:'Poppins', sans-serif;
+}
