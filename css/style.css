@@ -338,6 +338,7 @@ p.words {
 
 .aboutbody{
 	font-size:18px;
+  text-align: justify;
 }
 .bloghome{
 	background-color:#202124;
